@@ -61,10 +61,4 @@ class ProductsShops extends ActiveRecord
     {
         return $this->hasOne(Shops::class, ['id' => 'shopId']);
     }
-
-    public function getAddresses(): ActiveQuery
-    {
-        return $this->hasMany(Addresses::class, ['shopId' => 'id'])
-            ->via('shop');
-    }
 }

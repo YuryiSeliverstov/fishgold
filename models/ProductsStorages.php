@@ -61,10 +61,4 @@ class ProductsStorages extends ActiveRecord
     {
         return $this->hasOne(Storages::class, ['id' => 'storageId']);
     }
-
-    public function getAddresses(): ActiveQuery
-    {
-        return $this->hasMany(Addresses::class, ['storageId' => 'id'])
-            ->via('storage');
-    }
 }
